@@ -1,0 +1,186 @@
+<! DOCTYPE html>
+<html>
+<!-- The following code has been developed by student of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only.  Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.
+ 
+T
+ 
+ 
+Author :
+
+Spirit Martin
+ <img src=pets-gad146efd0_1920.html>
+Further Information:
+http://cns.utexas.edu/fri
+ 
+Research Educator:
+Timothy Riedel
+triedel@utexas.edu
+ 
+Brief Description of Goal of Code:
+blah, blah, blah,
+ 
+Known Issues:
+blah, blah, blah, blah
+https://www.w3schools.com/w3css/default.asp
+https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
+-->
+	
+   <head> 
+      <title>Dogs or Cats?</title> <!-- This is the title on the browser tab of my web app. -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <link rel="stylesheet" href="w3.css">
+      <link rel="stylesheet" href="w3-colors-flat.css">
+   </head> 
+
+
+<script> //Start of script.
+      
+	var dog_count = 0;
+        var cat_count = 0;
+// The two initialized variables above correspond to dogs and cats. They are both set to 0.	
+	
+        function dogadd(){
+            dog_count = dog_count + 1;
+        }
+//Above is the function for allergyAdd(). Whenever the user clicks on the response (Yes or No) corresponding to dogs, +1 will be added.
+	
+        function catAdd(){
+            cat_count = cat_count + 1;
+        }
+//Above is the function for catAdd(). Whenever the user clicks on the response (Yes or No) corresponding to a cat, +1 will be added.
+	
+	function printAnswer(){
+		dogPercent = (dog_count/4) * 100; //Formula for calculating percentage of dogs.
+		catPercent = (cat_count/4) * 100; //Formula for calculating percentage of cats.
+//Above is the function for printAnswer(). This function displays the probabilities of dogs or cats on the last page of the questionnaire.
+		
+		var resultText = document.getElementById("results"); //This variable is what helps display the results.
+		resultText.innerHTML = "Probability it is dogs = " + dogPercent + "%" + "<br> Probability it is a cats = " + catPercent + "%";
+		//The words in parentheses followed by the equal sign after resultText.innerHTML is the text that is displayed on the results page. I added +"%"+ after dogPercent and catPercent so percentage signs could be displayed on the results page. 
+	}
+	
+  </script> <!-- End of script. -->
+
+
+
+<style>	
+.body {
+     margin: 0em;
+}
+
+.page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: -100vw;
+    overflow-y: auto;
+    z-index: 0;
+    <h1 style="background-color:DodgerBlue;">Hello World</h1>
+}
+
+  .page:target {
+    left: 0vw;
+    z-index: 1;
+}
+</style>
+
+<body>
+<div id="header" class="w3-container w3-pale-blue"> <!-- Changed all page headers to pale green. -->
+	<h1>Cats or Dogs?</h1> <!-- Text on the page header. -->
+</div> <!-- Divider between the header and the rest of the page text. -->
+	
+<div id="content" class="w3-container">
+	<p>Are you feeling like you might want a new pet but can't decide what pet? Answer a few short questions to find out!</p>
+	
+	<a href="#one" class="w3-btn w3-blue w3-round"> Get Started </a> <!-- Changed "Get Started" button color to blue; "href" links the user to page one after they click the button. -->
+	
+	<p>The following code has been developed by a student of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at 		Austin.  
+	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
+
+<footer class="w3-bottom w3-container w3-pale-blue"> <!-- Changed all footer colors to pale blue. --> 
+	<p>DIY!</p>
+</footer>
+
+<div class="page" id="one">
+	<div id="header" class="w3-container w3-pale-green">
+		<h1>Cat or Dog?: Question 1</h1> <!-- Text on page header; added "Question 1" to notify user what question they're on. -->
+	</div> <!-- Divider between the header and the question/answer buttons. -->
+	
+    	<div id="content" class="w3-container">
+        <p>Are your at home a lot or gone?</p>
+	<a href="#two"  onclick="dogAdd();" class="w3-btn w3-blue"> Yes</a> <!-- After onclick=dogAdd() or catAdd(), "href" links user to page two. --> 
+	<a href="#two"  onclick="catAdd();" class="w3-btn w3-blue">No</a> <!-- Changed all "Yes" and "No" button colors to blue. -->
+    	</div><!-- /content -->
+
+<footer class="w3-bottom w3-container w3-pale-blue">
+	<p>DIY!</p>
+</footer>
+</div>
+
+<div class="page" id="two">
+	<div class="w3-container w3-pale-blue">
+		<h1>Cat or Dog?: Question 2</h1> <!-- Text on page header; added "Question 2" to notify user what question they're on. -->
+	</div> <!-- Divider between the header and the question/answer buttons. -->
+	
+	<div id="content" class="w3-container">
+	<p>Do you enjoy going on walks?</p>
+	<a href="#three"  onclick="catAdd();" class="w3-btn w3-blue"> Yes</a> <!-- After onclick=dogAdd() or catAdd(), "href" links user to page three. -->
+	<a href="#three"  onclick="dogAdd();" class="w3-btn w3-blue">No</a>
+	</div><!-- /content -->
+	
+<footer class="w3-bottom w3-container w3-pale-blue">
+	<p>DIY!</p>
+</footer>
+</div>
+	
+<div class="page" id="three">
+	<div class="w3-container w3-pale-blue">
+		<h1>Cat or Dog?: Question 3</h1> <!-- Text on page header; added "Question 3" to notify user what question they're on. -->
+	</div> <!-- Divider between the header and the question/answer buttons. -->
+	  
+	<div id="content" class="w3-container">
+	<p>Are you ok with barking?</p>
+	<a href="#four"  onclick="catAdd();" class="w3-btn w3-blue"> Yes</a> <!-- After onclick=dogAdd() or catAdd(), "href" links user to page four. -->
+	<a href="#four"  onclick="dogAdd();" class="w3-btn w3-blue">No</a>
+	</div><!-- /content -->
+
+<footer class="w3-bottom w3-container w3-pale-blue">
+	<p>DIY!</p>
+</footer>
+</div>
+
+<div class="page" id="four">
+	<div class="w3-container w3-pale-blue">
+		<h1>Cat or Dog?: Question 4</h1> <!-- Text on page header; added "Question 4" to notify user what question they're on. -->
+	</div> <!-- Divider between the header and the question/answer buttons. -->
+	  
+	<div id="content" class="w3-container">
+	<p>Do you have young children?</p>
+	<a href="#five"  onclick="dogAdd(); printAnswer()" class="w3-btn w3-blue"> Yes</a> <!-- After onclick=dogAdd() or catAdd(), "href" links user to page five: the results. -->
+	<a href="#five"  onclick="catAdd(); printAnswer()" class="w3-btn w3-blue">No</a> <!-- The printAnswer() function that follows the catAdd() and dogAdd() is what calculates the percentage (results) of cat and dogs and displays it on the results page. --> 
+	</div><!-- /content -->
+
+<footer class="w3-bottom w3-container w3-pale-blue">
+	<p>DIY!</p>
+</footer>
+</div>
+	
+<div class="page" id="five">
+	<div class="w3-container w3-pale-blue">
+		<h1>Cat or Dog?: Results</h1> <!-- Text on page header; added "Results" to notify user that they have finished the questionnaire and are now seeing their results. -->
+	</div> <!-- Divider between the header and the result text. -->
+	
+	<div id="content" class="w3-container">
+	<p id="results"></p> <!-- Paragraph for results page. -->
+	</div><!-- /content -->
+	
+
+	
+<footer class="w3-bottom w3-container w3-pale-blue">
+	<p>DIY!</p>
+</footer>
+
+</body>
+</html>
